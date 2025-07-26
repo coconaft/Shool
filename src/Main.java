@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите солько учеников будет в классе");
         int col = sc.nextInt();
-        ArrayList<Grduate> graduate = new ArrayList<>(col);
+        ArrayList<Grduate> graduate = new ArrayList<>();
 
         sc.nextLine();
         for (int i = 0; i< col; i++) {
@@ -42,11 +42,9 @@ public class Main {
             else{
                 System.out.println("Отмена");
             }
-
         }
         System.out.println("Итоговый Список:");
         infoGr(graduate);
-
     }
 
      public static void infoGr(ArrayList<Grduate> graduate){
@@ -54,6 +52,7 @@ public class Main {
             System.out.println((i+1) + ". " + graduate.get(i).fIO + ", " + graduate.get(i).age);
         }
     }
+
      public static Grduate inputGr(){
          Grduate newGrad = new Grduate();
          Scanner ss = new Scanner(System.in);
@@ -67,8 +66,6 @@ public class Main {
     }
 }
 
-
-
 class Grduate{
     String fIO;
     int age;
@@ -77,106 +74,4 @@ class Grduate{
         age++;
         return age;
     }
-
-}
-class Clasov {
-
-    int[] cls1;
-    int[] cls2;
-    int[] cls3;
-    int[] cls4;
-    int[] cls5;
-    int[] cls6;
-    int[] cls7;
-    int[] cls8;
-    int[] cls9;
-    int[] cls10;
-    int[] cls11;
-
-    void inf(){
-        for (int x:cls11){
-            System.out.println(x);
-        }
-        for (int x:cls10){
-            System.out.println(x);
-        }
-        for (int x:cls9){
-            System.out.println(x);
-        }
-        for (int x:cls8){
-            System.out.println(x);
-        }
-        for (int x:cls7){
-            System.out.println(x);
-        }
-        for (int x:cls6){
-            System.out.println(x);
-        }
-        for (int x:cls5){
-            System.out.println(x);
-        }
-        for (int x:cls4){
-            System.out.println(x);
-        }
-        for (int x:cls3){
-            System.out.println(x);
-        }
-        for (int x:cls2){
-            System.out.println(x);
-        }
-        for (int x:cls1){
-            System.out.println(x);
-        }
-    }
-
-    int vv() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Выбери класс (с 1 по 11)");
-        int classNumber = sc.nextInt();
-        System.out.println("Сколько будет"+classNumber+"классов");
-        int stn = sc.nextInt();
-
-        switch (classNumber) {
-            case 1:
-                cls1 = new int[stn];
-                break;
-            case 2:
-                cls2 = new int[stn];
-                break;
-            case 3:
-                cls3 = new int[stn];
-                break;
-            case 4:
-                cls4 = new int[stn];
-                break;
-            case 5:
-                cls5 = new int[stn];
-                break;
-            case 6:
-                cls6 = new int[stn];
-                break;
-            case 7:
-                cls7 = new int[stn];
-                break;
-            case 8:
-                cls8 = new int[stn];
-                break;
-            case 9:
-                cls9 = new int[stn];
-                break;
-            case 10:
-                cls10 = new int[stn];
-                break;
-            case 11:
-                cls11 = new int[stn];
-                break;
-            default:
-                System.out.println("Неверный номер класса!");
-                return -1;
-        }
-
-        return classNumber;
-
-    }
-
 }
