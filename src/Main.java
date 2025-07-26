@@ -11,7 +11,7 @@ public class Main {
         ArrayList<Grduate> graduate = new ArrayList<>();
 
         sc.nextLine();
-        for (int i = 0; i< col; i++) {
+        for (int i = 0; i < col; i++) {
             Grduate grad = inputGr();
             sc.nextLine();
             graduate.add(grad);
@@ -49,7 +49,7 @@ public class Main {
 
      public static void infoGr(ArrayList<Grduate> graduate){
         for (int i = 0; i < graduate.size(); i++) {
-            System.out.println((i+1) + ". " + graduate.get(i).fIO + ", " + graduate.get(i).age);
+            System.out.println((i+1) + ". " + graduate.get(i).fio + ", " + graduate.get(i).age);
         }
     }
 
@@ -58,7 +58,7 @@ public class Main {
          Scanner ss = new Scanner(System.in);
 
          System.out.print("Введите ФИО ученика");
-         newGrad.fIO = ss.nextLine();
+         newGrad.fio = ss.nextLine();
 
          System.out.println("Введите возраст ученика ");
          newGrad.age = ss.nextInt();
@@ -67,7 +67,7 @@ public class Main {
 }
 
 class Grduate{
-    String fIO;
+    String fio;
     int age;
     int growing(){
         System.out.println("Взростить на год");
