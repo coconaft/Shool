@@ -3,31 +3,22 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите солько учеников будет в классе");
         int col = sc.nextInt();
         ArrayList<Grduate> graduate = new ArrayList<>(col);
 
-
         sc.nextLine();
         for (int i = 0; i< col; i++) {
-            Grduate grad = new Grduate();
-
-            System.out.print("Введите ФИО ученика"+(i+1)+": ");
-            grad.fIO = sc.nextLine();
-
-            System.out.println("Введите возраст ученика " + (i+1) + ":");
-            grad.age = sc.nextInt();
+            Grduate grad = inputGr();
             sc.nextLine();
-
             graduate.add(grad);
-
         }
 
         System.out.println("\nТекущий список учеников:");
         infoGr(graduate);
-
 
         System.out.println("Внести изменения в списке учеников? (1 да 2 нет)");
         int choice = sc.nextInt();
@@ -36,18 +27,9 @@ public class Main {
             sc.nextLine();
             int num1 = sc.nextInt();
             if  (num1 == 1) {
-                Grduate newGrad= new Grduate();
-                System.out.println("Введите ФИО нового ученика");
+                Grduate grad = inputGr();
                 sc.nextLine();
-                newGrad.fIO = sc.nextLine();
-
-                System.out.println("Введите возраст ученика ");
-                newGrad.age = sc.nextInt();
-                sc.nextLine();
-
-                graduate.add(newGrad);
-
-
+                graduate.add(grad);
             }
             else if (num1 == 2) {
                 System.out.println("Кого  ученика вы хотите Анигилировать?");
@@ -62,18 +44,26 @@ public class Main {
             }
 
         }
-            System.out.println("Итоговый Список:");
-            infoGr(graduate);
+        System.out.println("Итоговый Список:");
+        infoGr(graduate);
 
     }
 
-    public static void infoGr (ArrayList<Grduate> graduate){
+     public static void infoGr(ArrayList<Grduate> graduate){
         for (int i = 0; i < graduate.size(); i++) {
-            System.out.println((i+1) + ". " + graduate.get(i).fIO + ", " + graduate);
+            System.out.println((i+1) + ". " + graduate.get(i).fIO + ", " + graduate.get(i).age);
         }
     }
-    public static void inputGr (ArrayList<Grduate> graduate){
+     public static Grduate inputGr(){
+         Grduate newGrad = new Grduate();
+         Scanner ss = new Scanner(System.in);
 
+         System.out.print("Введите ФИО ученика");
+         newGrad.fIO = ss.nextLine();
+
+         System.out.println("Введите возраст ученика ");
+         newGrad.age = ss.nextInt();
+         return newGrad;
     }
 }
 
